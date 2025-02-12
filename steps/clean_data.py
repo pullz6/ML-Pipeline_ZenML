@@ -16,6 +16,7 @@ def clean_df(df: pd.DataFrame) -> Tuple[Annotated[pd.DataFrame,"X_train"],Annota
         divide_strategy = DataDivideStrategy()
         data_cleaning = DataCleaning(processed_data, divide_strategy)
         X_train, X_test, y_train, y_test = data_cleaning.handle_data()
+        return X_train, X_test, y_train, y_test
         logging.infor("Data Cleaning completed")
     except Exception as e: 
         logging.error('Error in Cleaning data: {}'.format(e))
