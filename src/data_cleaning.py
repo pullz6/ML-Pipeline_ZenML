@@ -41,7 +41,7 @@ class DataPreProcessStrategy(DataStrategy):
             data = data.select_dtypes(include=[np.number])
             cols_to_drop = ['customer_zip_code_prefix','order_item_id']
             data = data.drop(cols_to_drop,axis=1)
-            
+            return data 
         except Exception as e: 
             logging.error('Error in preprocessing data: {}'.format(e))
             raise e
