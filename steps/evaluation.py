@@ -3,7 +3,7 @@ from zenml import step
 import pandas as pd
 from sklearn.base import RegressorMixin 
 from src.evaluation import MSE,RMSE, R2 
-from typing import tuple
+from typing import Tuple
 from typing_extensions import Annotated
 
 @step 
