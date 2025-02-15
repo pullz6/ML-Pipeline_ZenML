@@ -13,7 +13,6 @@ experiment_tracker = Client().active_stack.experiment_tracker
 import mlflow 
 
 
-
 @step(experiment_tracker=experiment_tracker.name)
 def train_model(X_train: pd.DataFrame,X_test:pd.DataFrame,y_train:pd.DataFrame,y_test:pd.DataFrame, model_name: str  = "LinearRegression" ) -> RegressorMixin: 
     """
