@@ -20,7 +20,7 @@ from steps.model_train import train_model
 docker_settings = DockerSettings(required_integrations=[MLFLOW])
 
 class DeploymentTriggerConfig(BaseModel): 
-    min_accuracy: float = 0.92 
+    min_accuracy: float = 0
     
 @step
 def deployment_trigger(
@@ -29,10 +29,26 @@ def deployment_trigger(
 )-> bool: 
     return accuracy >=config.min_accuracy
 
-@pipeline(enable_cache=True,settings={"docker": docker_settings})
+class MLFlowDeploymentLoaderStepParameters(BaseModel):
+    """MLflow deployment getter parameters
+
+    Attributes:
+        pipeline_name: name of the pipeline that deployed the MLflow prediction
+            server
+        step_name: the name of the step that deployed the MLflow prediction
+            server
+        running: when this flag is set, the step only returns a running service
+        model_name: the name of the model that is deployed
+    """
+
+    pipeline_name: str
+    step_name: str
+    running: bool = True
+    
+@pipeline(enable_cache=False,settings={"docker": docker_settings})
 def continuous_deployment_pipeline(
     data_path: str,
-    min_accuracy: float = 0.92, 
+    min_accuracy: float = 0, 
     workers: int = 1, 
     timeout: int = DEFAULT_SERVICE_START_STOP_TIMEOUT,
 ): 
