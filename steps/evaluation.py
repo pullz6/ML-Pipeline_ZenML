@@ -17,6 +17,8 @@ def evaluate_model(model: RegressorMixin, X_test: pd.DataFrame, y_test: pd.DataF
     df: the ingested data 
     """
     try: 
+        experiment_name = "customer-satisfaction-experiment"
+        mlflow.set_experiment(experiment_name)
         prediction = model.predict(X_test)
         mse_class = MSE()
         mse = mse_class.calculate_scores(y_test, prediction)
