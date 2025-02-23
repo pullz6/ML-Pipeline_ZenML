@@ -1,16 +1,14 @@
 # Deploying a model using zenml and mlflow
 
-This is starting project to understand how to deploy a simple project with Zenml and MlFlow, locally. This 
+This is starting project to understand how to deploy a simple project with Zenml and MlFlow, locally. This project was made following a tutorial from freecodecamp.org, however this is an error at deployment, which is addressed in this repo. 
 ---
 
 ## Table of Contents
 
-1. [Project Overview](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-2. [Installation](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-4. [Examples](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-5. [Project Structure](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-6. [Contributing](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-7. [Acknowledgments](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
+1. [Project Overview]
+2. [Installation]
+3. [Project Structure]
+4. [Acknowledgments]
 
 ---
 
