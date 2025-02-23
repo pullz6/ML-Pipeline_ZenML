@@ -6,14 +6,11 @@ This is starting project to understand how to deploy a simple project with Zenml
 ## Table of Contents
 
 1. [Project Overview](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-2. [Features](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-3. [Installation](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-4. [Usage](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-5. [Examples](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-6. [Project Structure](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-7. [Contributing](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-8. [License](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
-9. [Acknowledgments](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
+2. [Installation](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
+4. [Examples](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
+5. [Project Structure](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
+6. [Contributing](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
+7. [Acknowledgments](https://www.notion.so/readme-md-Template-in-Github-12c81ba51b198002bc79e96f749cafd6?pvs=21)
 
 ---
 
@@ -21,82 +18,47 @@ This is starting project to understand how to deploy a simple project with Zenml
 
 ### About
 
-Provide more detail about the project here:
+Our objectives are the below:
 
-- Describe the main goals and scope.
-- Explain the problem it addresses and why it’s useful.
-- Mention any key tools, libraries, or frameworks used.
+- Deploying a simple model using Zenml and MLFlow. 
+- Zenml is a framework that is relatively new and few functional tutorials are available. This repo intends to provide a template to deploy a simple model or a starting point. 
+- Zenml, MLFlow, Sklearn and Pandas are mainly used, few other ancillary libraries are used as well. 
 
 ### Screenshots or Demos
 
-If available, add images or animated GIFs that showcase the application. This adds visual appeal and context.
+Below screenshot of the logged model after pre-processing, training and testing steps completed with Zenml while integrating with MLFlow. 
 
----
-
-## Features
-
-- List out the key features of your project.
-- Focus on unique functionalities, user experience highlights, or specific innovations.
-
----
+![image](https://github.com/user-attachments/assets/05aaaed9-87ee-478a-8b2c-7dcc941e69ea)
 
 ## Installation
 
 ### Prerequisites
 
-1. List any software, packages, or version requirements (e.g., Python 3.7+, Node.js).
-2. Links to installation guides if users are likely unfamiliar.
+Below libraries needs to be installed in the virtual environment: 
 
-### Setup
+1. Zenml
+2. MLFlow
+3. Pandas
 
-Detailed steps to install and run the project:
+### Instructions
 
-```bash
-bash
-Copy code
-# Clone the repository
-git clone https://github.com/yourusername/yourprojectname.git
+While you can clone the repository, it would be helpful to watch this tutorial to better understand the process. 
 
-# Navigate into the directory
-cd yourprojectname
+When going through the tutorial there is an error towards at the model deployment stage. This error is fixed in this repository by removing the autologging and manually logging the model (this is in line 30 in model_train in the steps file), in addition to that few other changes was made to the run_development.py file. 
 
-# Install dependencies
-pip install -r requirements.txt
+When running: 
 
+1. pip install "zenml[server]"
+2. export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+3. zenml up (if you want to deactivate it you can run zenml down)
+4. run run_pipeline.py
+5. python run_development.py --config deploy
+
+If you ran into errors when deploying the model,please try the below: 
+1. mlflow ui --port 5000 (if you can't see the mlflow dashboard, you can ran this code to see the code without using zenml)
+2. model-deployer models delete <model_id> (if you have a duplicate of the model created, you can get the model id from both zenml and mlflow dashboards, replace it with the <model_id> and run to delete the model)  
+   
 ```
-
----
-
-## Usage
-
-### Running the Application
-
-Provide steps or commands to launch the project.
-
-### Configuration
-
-Explain any environment variables or configuration steps:
-
-- For example, set up `.env` files, database settings, or API keys.
-
----
-
-## Examples
-
-Include code examples, usage cases, or sample input/output:
-
-```python
-python
-Copy code
-# Example of usage
-from yourmodule import yourfunction
-
-result = yourfunction(input_data)
-print(result)
-
-```
-
-For interactive projects, a video or GIF demo is also highly effective here.
 
 ---
 
@@ -118,20 +80,6 @@ project-root/
 
 Provide brief explanations for each major directory/file if the structure is complex.
 
----
-
-## Contributing
-
-Guidelines for contributing to the project:
-
-- How to submit issues, bug reports, or feature requests.
-- Guidelines for pull requests, including coding standards and testing.
-
----
-
-## License
-
-Specify the license type (e.g., MIT, Apache, etc.) and include a link to the full license file.
 
 ---
 
@@ -141,4 +89,3 @@ Shout out to resources, libraries, people, or tutorials that helped you build th
 
 ---
 
-This template makes your project easy to understand, onboard, and use, making it more likely to engage users and contributors.
