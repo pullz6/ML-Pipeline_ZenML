@@ -1,6 +1,6 @@
-# ML-Pipeline_ZenML
+# Deploying a model using zenml and mlflow
 
-This is starting project to understand how to deploy a simple project with Zenml and MlFlow, locally. 
+This is starting project to understand how to deploy a simple project with Zenml and MlFlow, locally. This 
 ---
 
 ## Table of Contents
@@ -42,7 +42,7 @@ Below libraries needs to be installed in the virtual environment:
 
 ### Instructions
 
-While you can clone the repository, it would be helpful to watch this tutorial to better understand the process. 
+While you can clone the repository, it would be helpful to watch this tutorial (->https://www.youtube.com/watch?v=-dJPoLm_gtE&t=1974s) to better understand the process. 
 
 When going through the tutorial there is an error towards at the model deployment stage. This error is fixed in this repository by removing the autologging and manually logging the model (this is in line 30 in model_train in the steps file), in addition to that few other changes was made to the run_development.py file. 
 
@@ -64,28 +64,19 @@ If you ran into errors when deploying the model,please try the below:
 
 ## Project Structure
 
-```bash
-bash
-Copy code
-project-root/
-│
-├── src/                 # Source files
+├── src/                 # The class files for the data, evaluation and training strategies
 ├── data/                # Sample datasets
-├── notebooks/           # Jupyter notebooks
-├── tests/               # Unit and integration tests
-├── README.md            # Project documentation
-└── requirements.txt     # Project dependencies
+├── pipelines/           # Blueprints for the development and training pipelines
+├── steps/               # Steps of the project such as data ingestion, data cleaning, model training, model evaluation. 
+└── README.md            # Project documentation
 
 ```
-
-Provide brief explanations for each major directory/file if the structure is complex.
-
 
 ---
 
 ## Acknowledgments
 
-Shout out to resources, libraries, people, or tutorials that helped you build the project.
+Please refer to this tutorial for further indepth explanation -> https://www.youtube.com/watch?v=-dJPoLm_gtE&t=1974s
 
 ---
 
