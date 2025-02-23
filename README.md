@@ -1,7 +1,7 @@
 # Deploying a model using zenml and mlflow
-
+-
 This is a starting project to understand how to deploy a simple model with Zenml and MlFlow locally. This project was made following a tutorial from freecodecamp.org, however this is an error at deployment, which is addressed in this repo. 
----
+-
 
 ## Table of Contents
 
