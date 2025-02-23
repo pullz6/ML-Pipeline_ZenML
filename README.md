@@ -1,6 +1,6 @@
 # Deploying a model using zenml and mlflow
 
-This is starting project to understand how to deploy a simple project with Zenml and MlFlow, locally. This project was made following a tutorial from freecodecamp.org, however this is an error at deployment, which is addressed in this repo. 
+This is a starting project to understand how to deploy a simple model with Zenml and MlFlow locally. This project was made following a tutorial from freecodecamp.org, however this is an error at deployment, which is addressed in this repo. 
 ---
 
 ## Table of Contents
@@ -56,12 +56,12 @@ If you ran into errors when deploying the model,please try the below:
 1. mlflow ui --port 5000 (if you can't see the mlflow dashboard, you can ran this code to see the code without using zenml)
 2. model-deployer models delete <model_id> (if you have a duplicate of the model created, you can get the model id from both zenml and mlflow dashboards, replace it with the <model_id> and run to delete the model)  
    
-```
 
 ---
 
 ## Project Structure
 
+```
 ├── src/                 # The class files for the data, evaluation and training strategies
 ├── data/                # Sample datasets
 ├── pipelines/           # Blueprints for the development and training pipelines
